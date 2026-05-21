@@ -1,4 +1,6 @@
-#include "airport.h"
+#define _CRT_SECURE_NO_WARNINGS
+#include "Airport.h"
+
 int** allocate_gate_matrix(int rows, int cols) {
     int** matrix = (int**)malloc(rows * sizeof(int*));
     if (matrix == NULL) {
@@ -20,7 +22,7 @@ int** allocate_gate_matrix(int rows, int cols) {
 }
 
 void print_terminal_status(int** matrix, int rows, int cols) {
-    printf("\n--- Terminal Gates Status ---\n"); // שונה לאנגלית
+    printf("\n--- Terminal Gates Status ---\n");
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (matrix[i][j] == 0) {
@@ -69,7 +71,7 @@ int assign_gate(int** matrix, int rows, int cols, int plane_id) {
             if (matrix[i][j] == 0) {
                 matrix[i][j] = plane_id;
                 printf("Flight %d assigned to Gate [%d,%d] (Priority Row %d)\n", plane_id, i, j, i);
-                return 1; // שיבוץ הצליח
+                return 1;
             }
         }
     }

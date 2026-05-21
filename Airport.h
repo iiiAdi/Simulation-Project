@@ -1,17 +1,10 @@
-#define _CRT_SECURE_NO_WARNINGS
 #ifndef AIRPORT_H
 #define AIRPORT_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int** allocate_gate_matrix(int rows, int cols);
-void print_terminal_status(int** matrix, int rows, int cols);
-void free_gate_matrix(int** matrix, int rows);
-void load_config(const char* filename, int* rows, int* cols, int* runways);
-void write_to_log(const char* message);
-int assign_gate(int** matrix, int rows, int cols, int plane_id);
-void release_gate(int** matrix, int rows, int cols, int plane_id);
+
 typedef enum {
     ARRIVING,
     LANDING,
@@ -45,14 +38,24 @@ typedef struct {
     int** gate_matrix;
     int matrix_rows;
     int matrix_cols;
-
     int total_runways;
     int busy_runways;
-
     SimulationEvent* fel_head;
-
     Plane* queue_head;
     Plane* queue_tail;
 } Airport;
+
+void insert_event(Airport* airport, EventType type, double event_time, int plane_id);
+void run_simulation(Airport* airport, double max_sim_time);
+void enqueue_plane(Airport* airport, int plane_id, double current_time);
+Plane* dequeue_plane(Airport* airport);
+
+int** allocate_gate_matrix(int rows, int cols);
+void print_terminal_status(int** matrix, int rows, int cols);
+void free_gate_matrix(int** matrix, int rows);
+void load_config(const char* filename, int* rows, int* cols, int* runways);
+void write_to_log(const char* message);
+int assign_gate(int** matrix, int rows, int cols, int plane_id);
+void release_gate(int** matrix, int rows, int cols, int plane_id);
 
 #endif
