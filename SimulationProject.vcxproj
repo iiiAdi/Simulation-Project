@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="airport_io.c" />
+    <ClCompile Include="Main.c" />
     <ClCompile Include="Simulation.c" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,0 @@
---- Simulation Started ---
-Flight 777 assigned to gate.
-Flight 101 assigned to gate.
---- Simulation Started ---
-Flight 777 assigned to gate.
-Flight 101 assigned to gate.
---- Simulation Started ---
-Flight 777 assigned to gate.
-Flight 101 assigned to gate.
