@@ -1,0 +1,116 @@
+=== Simulation Started ===
+[T = 10.00]: Plane ID 101 arrived at airspace.
+   [Queue] Flight ID 101 enters queue. Fuel level: 3
+   [Runway] Runway available. Flight ID 101 starts landing process.
+[T = 20.00]: A runway has cleared.
+   [Terminal] Plane ID 101 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 23.00]: Plane ID 102 arrived at airspace.
+   [Queue] Flight ID 102 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 102 starts landing process.
+[T = 28.00]: Plane ID 103 arrived at airspace.
+   [Queue] Flight ID 103 enters queue. Fuel level: 3
+   [Runway] Runway available. Flight ID 103 starts landing process.
+[T = 31.00]: Plane ID 104 arrived at airspace.
+   [Queue] Flight ID 104 enters queue. Fuel level: 3
+   [Runway] All runways busy. Plane ID 104 must hover in queue.
+[T = 33.00]: A runway has cleared.
+   [Terminal] Plane ID 102 finished landing. Requesting a gate...
+   [Runway] Next plane cleared to land: Flight ID 104.
+[T = 38.00]: A runway has cleared.
+   [Terminal] Plane ID 103 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 43.00]: A runway has cleared.
+   [Terminal] Plane ID 104 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 44.00]: Plane ID 105 arrived at airspace.
+   [Queue] Flight ID 105 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 105 starts landing process.
+[T = 50.00]: Gate Event - Plane ID 101 finished terminal operations and is departing.
+[T = 50.00]: Plane ID 106 arrived at airspace.
+   [Queue] Flight ID 106 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 106 starts landing process.
+[T = 54.00]: A runway has cleared.
+   [Terminal] Plane ID 105 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 55.00]: Plane ID 107 arrived at airspace.
+   [Queue] Flight ID 107 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 107 starts landing process.
+[T = 60.00]: A runway has cleared.
+   [Terminal] Plane ID 106 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 61.00]: Plane ID 108 arrived at airspace.
+   [Queue] Flight ID 108 enters queue. Fuel level: 3
+   [Runway] Runway available. Flight ID 108 starts landing process.
+[T = 63.00]: Gate Event - Plane ID 102 finished terminal operations and is departing.
+[T = 65.00]: A runway has cleared.
+   [Terminal] Plane ID 107 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 68.00]: Gate Event - Plane ID 103 finished terminal operations and is departing.
+[T = 71.00]: A runway has cleared.
+   [Terminal] Plane ID 108 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 72.00]: Plane ID 109 arrived at airspace.
+   [Queue] Flight ID 109 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 109 starts landing process.
+[T = 73.00]: Gate Event - Plane ID 104 finished terminal operations and is departing.
+[T = 81.00]: Plane ID 110 arrived at airspace.
+   [Queue] Flight ID 110 enters queue. Fuel level: 2
+   [Runway] Runway available. Flight ID 110 starts landing process.
+[T = 82.00]: A runway has cleared.
+   [Terminal] Plane ID 109 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 84.00]: Gate Event - Plane ID 105 finished terminal operations and is departing.
+[T = 90.00]: Gate Event - Plane ID 106 finished terminal operations and is departing.
+[T = 91.00]: A runway has cleared.
+   [Terminal] Plane ID 110 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 93.00]: Plane ID 111 arrived at airspace.
+   [Queue] Flight ID 111 enters queue. Fuel level: 5
+   [Runway] Runway available. Flight ID 111 starts landing process.
+[T = 95.00]: Gate Event - Plane ID 107 finished terminal operations and is departing.
+[T = 97.00]: Plane ID 112 arrived at airspace.
+   [Queue] Flight ID 112 enters queue. Fuel level: 3
+   [Runway] Runway available. Flight ID 112 starts landing process.
+[T = 101.00]: Gate Event - Plane ID 108 finished terminal operations and is departing.
+[T = 103.00]: A runway has cleared.
+   [Terminal] Plane ID 111 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 106.00]: Plane ID 113 arrived at airspace.
+   [Queue] Flight ID 113 enters queue. Fuel level: 5
+   [Runway] Runway available. Flight ID 113 starts landing process.
+[T = 107.00]: A runway has cleared.
+   [Terminal] Plane ID 112 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 112.00]: Gate Event - Plane ID 109 finished terminal operations and is departing.
+[T = 113.00]: Plane ID 114 arrived at airspace.
+   [Queue] Flight ID 114 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 114 starts landing process.
+[T = 116.00]: A runway has cleared.
+   [Terminal] Plane ID 113 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 121.00]: Gate Event - Plane ID 110 finished terminal operations and is departing.
+[T = 123.00]: A runway has cleared.
+   [Terminal] Plane ID 114 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 125.00]: Plane ID 115 arrived at airspace.
+   [Queue] Flight ID 115 enters queue. Fuel level: 4
+   [Runway] Runway available. Flight ID 115 starts landing process.
+[T = 133.00]: Gate Event - Plane ID 111 finished terminal operations and is departing.
+[T = 135.00]: A runway has cleared.
+   [Terminal] Plane ID 115 finished landing. Requesting a gate...
+   [Runway] No planes waiting in airspace. Runway remains IDLE.
+[T = 137.00]: Gate Event - Plane ID 112 finished terminal operations and is departing.
+[T = 146.00]: Gate Event - Plane ID 113 finished terminal operations and is departing.
+[T = 153.00]: Gate Event - Plane ID 114 finished terminal operations and is departing.
+[T = 165.00]: Gate Event - Plane ID 115 finished terminal operations and is departing.
+--- Simulation Ended at T = 165.00 ---
+
+=============================================
+         SIMULATION RESULTS SUMMARY          
+=============================================
+ Total Airplanes Arrived : 15
+ Total Airplanes Landed  : 15
+ Total Airplanes Departed: 15
+ Airplanes Delayed in Air: 1
+=============================================

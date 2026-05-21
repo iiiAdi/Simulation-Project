@@ -47,13 +47,13 @@ typedef struct {
 
 void insert_event(Airport* airport, EventType type, double event_time, int plane_id);
 void run_simulation(Airport* airport, double max_sim_time);
-void enqueue_plane(Airport* airport, int plane_id, double current_time);
+void enqueue_plane(Airport* airport, int plane_id, double current_time, FILE* log_file);
 Plane* dequeue_plane(Airport* airport);
 
 int** allocate_gate_matrix(int rows, int cols);
 void print_terminal_status(int** matrix, int rows, int cols);
 void free_gate_matrix(int** matrix, int rows);
-void load_config(const char* filename, int* rows, int* cols, int* runways);
+void load_config(const char* filename, int* rows, int* cols, int* runways, int* num_planes);
 void write_to_log(const char* message);
 int assign_gate(int** matrix, int rows, int cols, int plane_id);
 void release_gate(int** matrix, int rows, int cols, int plane_id);

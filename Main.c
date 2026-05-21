@@ -20,10 +20,10 @@ int main() {
     Airport my_airport;
     init_airport_defaults(&my_airport);
 
-    int rows = 0, cols = 0, runways = 0;
+    int rows = 0, cols = 0, runways = 0, num_planes = 0;;
 
     printf("Reading configuration file...\n");
-    load_config("config.txt", &rows, &cols, &runways);
+    load_config("config.txt", &rows, &cols, &runways, &num_planes);
 
     my_airport.matrix_rows = rows;
     my_airport.matrix_cols = cols;
@@ -34,17 +34,19 @@ int main() {
     print_terminal_status(my_airport.gate_matrix, rows, cols);
 
     printf("Scheduling initial flight arrivals into FEL...\n");
+    double next_arrival_time = 0.0;
+    for (int i = 0; i < num_planes; i++) {
+        next_arrival_time += (rand() % 15) + 1;
 
-    insert_event(&my_airport, EVENT_PLANE_ARRIVAL, 10.5, 501);
-    insert_event(&my_airport, EVENT_PLANE_ARRIVAL, 2.1, 101);
-    insert_event(&my_airport, EVENT_PLANE_ARRIVAL, 4.5, 303);
-    insert_event(&my_airport, EVENT_PLANE_ARRIVAL, 15.2, 707);
+        int generated_plane_id = 100 + (i + 1);
 
-    run_simulation(&my_airport, 200.0);
+        insert_event(&my_airport, EVENT_PLANE_ARRIVAL, next_arrival_time, generated_plane_id);
+    }
+
+    run_simulation(&my_airport, 500.0);
 
     printf("\nCleaning up system memory...\n");
     free_gate_matrix(my_airport.gate_matrix, rows);
 
-    printf("System shutdown complete. Goodbye!\n");
     return 0;
 }

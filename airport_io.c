@@ -43,18 +43,28 @@ void free_gate_matrix(int** matrix, int rows) {
     }
     free(matrix);
 }
-void load_config(const char* filename, int* rows, int* cols, int* runways) {
+void load_config(const char* filename, int* rows, int* cols, int* runways, int* num_planes) {
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
         printf("Error: Could not open config file %s!\n", filename);
         exit(1);
     }
 
-    fscanf(file, "%d %d %d", rows, cols, runways);
+    char dummy[50];
+
+    fscanf(file, "%s %d", dummy, rows);
+    fscanf(file, "%s %d", dummy, cols);
+    fscanf(file, "%s %d", dummy, runways);
+    fscanf(file, "%s %d", dummy, num_planes);
+
     fclose(file);
 
-    printf("Config loaded: %d rows, %d cols, %d runways.\n", *rows, *cols, *runways);
+    printf("Config loaded successfully:\n");
+    printf("  - Terminal Gates Matrix: %d x %d\n", *rows, *cols);
+    printf("  - Total Runways: %d\n", *runways);
+    printf("  - Simulated Planes: %d\n\n", *num_planes);
 }
+
 void write_to_log(const char* message) {
     FILE* file = fopen("airport_log.txt", "a");
     if (file == NULL) {
