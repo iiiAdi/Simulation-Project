@@ -65,16 +65,6 @@ void load_config(const char* filename, int* rows, int* cols, int* runways, int* 
     printf("  - Simulated Planes: %d\n\n", *num_planes);
 }
 
-void write_to_log(const char* message) {
-    FILE* file = fopen("airport_log.txt", "a");
-    if (file == NULL) {
-        printf("Error: Could not open log file!\n");
-        return;
-    }
-
-    fprintf(file, "%s\n", message);
-    fclose(file);
-}
 int assign_gate(int** matrix, int rows, int cols, int plane_id) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
