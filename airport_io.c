@@ -45,24 +45,47 @@ void free_gate_matrix(int** matrix, int rows) {
 }
 void load_config(const char* filename, int* rows, int* cols, int* runways, int* num_planes) {
     FILE* file = fopen(filename, "r");
+
     if (file == NULL) {
-        printf("Error: Could not open config file %s!\n", filename);
-        exit(1);
+        printf("[CONFIG] '%s' not found. Creating a default configuration file...\n", filename);
+
+        file = fopen(filename, "w");
+        if (file == NULL) {
+            printf("Critical Error: Could not create default config file!\n");
+            exit(1);
+        }
+
+        fprintf(file, "GATES_ROWS: 2\n");
+        fprintf(file, "GATES_COLS: 3\n");
+        fprintf(file, "TOTAL_RUNWAYS: 2\n");
+        fprintf(file, "NUMBER_OF_PLANES: 6\n");
+        fclose(file);
+
+        file = fopen(filename, "r");
+        if (file == NULL) {
+            printf("Error: Could not open newly created config file!\n");
+            exit(1);
+        }
+        printf("[CONFIG] Default configuration file created and loaded successfully.\n");
     }
 
     char dummy[50];
 
-    fscanf(file, "%s %d", dummy, rows);
-    fscanf(file, "%s %d", dummy, cols);
-    fscanf(file, "%s %d", dummy, runways);
-    fscanf(file, "%s %d", dummy, num_planes);
+    // Check if there's an error with getting one of the values
+    if (fscanf(file, "%s %d", dummy, rows) != 2) printf("Warning: Failed to read rows\n");
+    if (fscanf(file, "%s %d", dummy, cols) != 2) printf("Warning: Failed to read cols\n");
+    if (fscanf(file, "%s %d", dummy, runways) != 2) printf("Warning: Failed to read runways\n");
+    if (fscanf(file, "%s %d", dummy, num_planes) != 2) printf("Warning: Failed to read num_planes\n");
 
     fclose(file);
 
-    printf("Config loaded successfully:\n");
-    printf("  - Terminal Gates Matrix: %d x %d\n", *rows, *cols);
-    printf("  - Total Runways: %d\n", *runways);
-    printf("  - Simulated Planes: %d\n\n", *num_planes);
+    printf("====================================\n");
+    printf("       CONFIG LOADED SUCCESSFULLY   \n");
+    printf("====================================\n");
+    printf(" Terminal Gates Matrix : %d x %d\n", *rows, *cols);
+    printf(" Total Airport Runways : %d\n", *runways);
+    printf(" Total Simulated Planes: %d\n", *num_planes);
+    printf("====================================\n\n");
 }
 
 int assign_gate(int** matrix, int rows, int cols, int plane_id) {
