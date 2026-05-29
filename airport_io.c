@@ -43,6 +43,7 @@ void free_gate_matrix(int** matrix, int rows) {
     }
     free(matrix);
 }
+
 void load_config(const char* filename, int* rows, int* cols, int* runways, int* num_planes) {
     FILE* file = fopen(filename, "r");
 
